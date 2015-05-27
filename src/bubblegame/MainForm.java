@@ -102,6 +102,7 @@ public class MainForm extends javax.swing.JFrame {
         int x = point.x;
         int y = point.y;
         System.out.println(x + " " + y);
+        drawField();
     }//GEN-LAST:event_fieldPanelMouseClicked
 
 

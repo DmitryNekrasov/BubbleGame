@@ -125,4 +125,37 @@ public class LogicTest {
         assertEquals(expResult, result);
     }
     
+    /**
+     * Test of dfs method, of class Logic.
+     */
+    @Test
+    public void testDfs() {
+        System.out.println("dfs");
+        
+        for (int i = 0; i < logic.getCountRow(); i++)
+            for (int j = 0; j < logic.getCountColumn(); j++)
+                logic.setFieldCell(i, j, 0);
+        
+        for (int i = 1; i <= 5; i++)
+            for (int j = 1; j <= 3; j++)
+                logic.setFieldCell(i, j, 1);
+        logic.outField();
+        
+        int[][] a = new int[15][10];
+        for (int i = 0; i <= 5; i++)
+            for (int j = 0; j <= 3; j++)
+                a[i][j] = -1;
+        
+        logic.dfs(3, 3, 1);
+        
+        boolean expResult = true;
+        boolean result = true;
+        
+        for (int i = 0; i < logic.getCountRow(); i++)
+            for (int j = 0; j < logic.getCountColumn(); j++)
+                if (logic.getFieldCell(i, j) != a[i][j])
+                    result = false;
+        
+        assertEquals(expResult, result);
+    }
 }
