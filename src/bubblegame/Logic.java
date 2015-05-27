@@ -5,6 +5,7 @@
  */
 package bubblegame;
 
+import java.awt.Point;
 import java.util.Random;
 
 /**
@@ -64,4 +65,7 @@ public class Logic {
         return Math.abs(random.nextInt()) % n;
     }
     
+    public Point screenPointToField(Point screenPoint) {
+        return new Point(0, 0);
+    }
 }
