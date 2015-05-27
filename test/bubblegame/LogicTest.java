@@ -18,7 +18,10 @@ import static org.junit.Assert.*;
  */
 public class LogicTest {
     
+    private Logic logic;
+    
     public LogicTest() {
+        logic = Logic.getInstance();
     }
     
     @BeforeClass
@@ -43,7 +46,6 @@ public class LogicTest {
     @Test
     public void testGenerateRandom() {
         System.out.println("generateRandom");
-        Logic logic = Logic.getInstance();
         int n = 3;
         boolean expResult = true;
         boolean result = true;
@@ -65,7 +67,6 @@ public class LogicTest {
     @Test
     public void testGetCountRow() {
         System.out.println("getCountRow");
-        Logic logic = Logic.getInstance();
         int expResult = 15;
         int result = logic.getCountRow();
         assertEquals(expResult, result);
@@ -77,7 +78,6 @@ public class LogicTest {
     @Test
     public void testGetCountColumn() {
         System.out.println("getCountColumn");
-        Logic logic = Logic.getInstance();
         int expResult = 10;
         int result = logic.getCountColumn();
         assertEquals(expResult, result);
@@ -89,10 +89,21 @@ public class LogicTest {
     @Test
     public void testGetFieldCell() {
         System.out.println("getFieldCell");
-        Logic logic = Logic.getInstance();
         int i = 0, j = 0;
         int expResult = 0;
         int result = logic.getFieldCell(i, j);
+        assertEquals(expResult, result);
+    }
+    
+    /**
+     * Test of initField method, of class Logic.
+     */
+    @Test 
+    public void testInitField() {
+        System.out.println("initField");
+        Logic logic = Logic.getInstance();
+        boolean expResult = true;
+        boolean result = true;
         assertEquals(expResult, result);
     }
     
