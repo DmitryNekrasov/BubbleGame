@@ -66,6 +66,6 @@ public class Logic {
     }
     
     public Point screenPointToField(Point screenPoint, int bubbleSize) {
-        return new Point(0, 0);
+        return new Point(screenPoint.x / bubbleSize, screenPoint.y / bubbleSize);
     }
 }
