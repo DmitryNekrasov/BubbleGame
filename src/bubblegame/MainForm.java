@@ -5,6 +5,7 @@
  */
 package bubblegame;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 /**
@@ -32,8 +33,18 @@ public class MainForm extends javax.swing.JFrame {
     public void drawField() {
         Graphics g = fieldPanel.getGraphics();
         for (int i = 0; i < logic.getCountRow(); i++)
-            for (int j = 0; j < logic.getCountColumn(); j++)
+            for (int j = 0; j < logic.getCountColumn(); j++) {
+                g.setColor(getColor(logic.getFieldCell(i, j)));
                 g.fillOval(j * bubbleSize, i * bubbleSize, bubbleSize, bubbleSize);
+            }
+    }
+    
+    public Color getColor(int colorCode) {
+        switch (colorCode) {
+            case Logic.redBubble: return Color.RED;
+            case Logic.greenBubble: return Color.GREEN;
+            default: return Color.BLUE;
+        }
     }
     
     /**
