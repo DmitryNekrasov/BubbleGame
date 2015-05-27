@@ -91,6 +91,11 @@ public class LogicTest {
     @Test
     public void testGetFieldCell() {
         System.out.println("getFieldCell");
+        
+        for (int i = 0; i < logic.getCountRow(); i++)
+            for (int j = 0; j < logic.getCountColumn(); j++)
+                logic.setFieldCell(i, j, 0);
+        
         int i = 0, j = 0;
         int expResult = 0;
         int result = logic.getFieldCell(i, j);
