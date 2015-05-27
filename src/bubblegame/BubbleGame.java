@@ -15,7 +15,8 @@ public class BubbleGame {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        MainForm mainForm = new MainForm();
+        mainForm.setVisible(true);
     }
     
 }
