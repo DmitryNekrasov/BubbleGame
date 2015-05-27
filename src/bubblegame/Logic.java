@@ -69,7 +69,11 @@ public class Logic {
         return new Point(screenPoint.x / bubbleSize, screenPoint.y / bubbleSize);
     }
     
-    public void dfs(Point screenPoint, int bubbleSize) {
+    public void processing(Point screenPoint, int bubbleSize) {
+        
+    }
+    
+    public void dfs(int x, int y) {
         
     }
 }
