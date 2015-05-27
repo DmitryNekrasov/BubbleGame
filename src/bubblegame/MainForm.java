@@ -107,7 +107,7 @@ public class MainForm extends javax.swing.JFrame {
         logic.processing(point, bubbleSize);
         drawField();
         if (logic.checkEndGame()) {
-            JOptionPane.showMessageDialog(fieldPanel, "qqq", "Конец игры", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Ваш результат: " + logic.getScore(), "Конец игры", JOptionPane.WARNING_MESSAGE);
             dispose();
         }
         
