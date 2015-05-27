@@ -22,10 +22,12 @@ public class Logic {
     
     private Random random;
     private int[][] field;
+    private int score;
     
     private Logic() {
         random = new Random();
         field = new int[countRow][countColumn];
+        score = 0;
     }
     
     public static Logic getInstance() {
@@ -49,6 +51,10 @@ public class Logic {
     
     public void setFieldCell(int i, int j, int val) {
         field[i][j] = val;
+    }
+    
+    public int getScore() {
+        return score;
     }
     
     public void initField() {
@@ -88,6 +94,7 @@ public class Logic {
         if (field[x][y] != colorCode || field[x][y] == -1)
             return;
         field[x][y] = -1;
+        score++;
         if (x > 0)
             dfs(x - 1, y, colorCode);
         if (x < countRow - 1)
