@@ -11,4 +11,17 @@ package bubblegame;
  */
 public class Logic {
     
+    private static Logic instance;
+    
+    private Logic() {
+        
+    }
+    
+    public static Logic getInstance() {
+        if (instance == null) {
+            instance = new Logic();
+        }
+        return instance;
+    }
+    
 }
