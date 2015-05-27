@@ -35,7 +35,7 @@ public class Logic {
     }
     
     public int generateRandom(int n) {
-        return 1;
+        return Math.abs(random.nextInt()) % n;
     }
     
 }
