@@ -39,7 +39,7 @@ public class Logic {
     }
     
     public int getCountColumn() {
-        return 1;
+        return countColumn;
     }
     
     public int getFieldCell(int i, int j) {

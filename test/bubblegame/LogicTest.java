@@ -71,4 +71,16 @@ public class LogicTest {
         assertEquals(expResult, result);
     }
     
+    /**
+     * Test of getCountColumn method, of class Logic.
+     */
+    @Test
+    public void testGetCountColumn() {
+        System.out.println("getCountColumn");
+        Logic logic = Logic.getInstance();
+        int expResult = 10;
+        int result = logic.getCountColumn();
+        assertEquals(expResult, result);
+    }
+    
 }
