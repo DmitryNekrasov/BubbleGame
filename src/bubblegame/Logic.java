@@ -77,9 +77,11 @@ public class Logic {
         Point fieldPoint = screenPointToField(screenPoint, bubbleSize);
         int j = fieldPoint.x;
         int i = fieldPoint.y;
-        dfs(i, j, field[i][j]);
-        shiftTopToBottom();
-        shiftRightToLeft();
+        if (validation(i, j)) {
+            dfs(i, j, field[i][j]);
+            shiftTopToBottom();
+            shiftRightToLeft();
+        }
     }
     
     public void dfs(int x, int y, int colorCode) {
@@ -131,7 +133,21 @@ public class Logic {
         }
     }
     
-    public boolean validation() {
-        return true;
+    public boolean validation(int x, int y) {
+        int colorCode = field[x][y];
+        boolean ans = false;
+        if (x > 0)
+            if (field[x - 1][y] == colorCode)
+                ans = true;
+        if (x < countRow - 1)
+            if (field[x + 1][y] == colorCode)
+                ans = true;
+        if (y > 0)
+            if (field[x][y - 1] == colorCode)
+                ans = true;
+        if (y < countColumn - 1)
+            if (field[x][y + 1] == colorCode)
+                ans = true;
+        return ans;
     }
 }
