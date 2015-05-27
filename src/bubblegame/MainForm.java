@@ -11,11 +11,11 @@ package bubblegame;
  */
 public class MainForm extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MainForm
-     */
+    Logic logic;
+    
     public MainForm() {
         initComponents();
+        logic = Logic.getInstance();
     }
 
     /**

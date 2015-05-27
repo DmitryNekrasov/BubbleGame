@@ -13,8 +13,13 @@ public class Logic {
     
     private static Logic instance;
     
+    final private int redBubble = 1, greenBubble = 2, blueBubble = 3;
+    final private int countRow = 15, countColumn = 10;
+    
+    public int[][] field;
+    
     private Logic() {
-        
+        field = new int[countRow][countColumn];
     }
     
     public static Logic getInstance() {
@@ -23,7 +28,5 @@ public class Logic {
         }
         return instance;
     }
-    
-    final private int redBubble = 1, greenBubble = 2, blueBubble = 3;
     
 }
