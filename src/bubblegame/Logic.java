@@ -150,4 +150,8 @@ public class Logic {
                 ans = true;
         return ans;
     }
+    
+    public boolean checkEndGame() {
+        return true;
+    }
 }
