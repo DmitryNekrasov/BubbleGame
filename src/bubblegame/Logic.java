@@ -77,7 +77,7 @@ public class Logic {
         
     }
     
-    public void dfs(int x, int y) {
+    public void dfs(int x, int y, int colorCode) {
         
     }
 }
