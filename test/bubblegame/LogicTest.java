@@ -246,4 +246,23 @@ public class LogicTest {
         
         assertEquals(expResult, result);
     }
+    
+    /**
+     * Test of validation method, of class Logic.
+     */
+    @Test
+    public void testValidation() {
+        System.out.println("validation");
+        
+        for (int i = 0; i < logic.getCountRow(); i++)
+            for (int j = 0; j < logic.getCountColumn(); j++)
+                logic.setFieldCell(i, j, -1);
+        logic.setFieldCell(14, 0, 0);
+        logic.setFieldCell(14, 0, 1);
+        
+        boolean expResult = true;
+        boolean result = logic.validation();
+        
+        assertEquals(expResult, result);
+    }
 }
