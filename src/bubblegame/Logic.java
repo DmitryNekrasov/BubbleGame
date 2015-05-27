@@ -68,4 +68,8 @@ public class Logic {
     public Point screenPointToField(Point screenPoint, int bubbleSize) {
         return new Point(screenPoint.x / bubbleSize, screenPoint.y / bubbleSize);
     }
+    
+    public void dfs(int i, int j) {
+        
+    }
 }
