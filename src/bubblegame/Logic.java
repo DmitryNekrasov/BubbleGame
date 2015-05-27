@@ -111,4 +111,8 @@ public class Logic {
             }
         }
     }
+    
+    public void shiftRightToLeft() {
+        
+    }
 }
