@@ -20,7 +20,7 @@ public class Logic {
     final private int countRow = 15, countColumn = 10;
     
     private Random random;
-    public int[][] field;
+    private int[][] field;
     
     private Logic() {
         field = new int[countRow][countColumn];
@@ -32,6 +32,18 @@ public class Logic {
             instance = new Logic();
         }
         return instance;
+    }
+    
+    public int getCountRow() {
+        return 1;
+    }
+    
+    public int getCountColumn() {
+        return 1;
+    }
+    
+    public int getFieldCell(int i, int j) {
+        return 1;
     }
     
     public void initField() {
