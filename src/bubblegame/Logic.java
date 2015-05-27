@@ -65,7 +65,7 @@ public class Logic {
         return Math.abs(random.nextInt()) % n;
     }
     
-    public Point screenPointToField(Point screenPoint) {
+    public Point screenPointToField(Point screenPoint, int bubbleSize) {
         return new Point(0, 0);
     }
 }
