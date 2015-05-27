@@ -6,6 +6,7 @@
 package bubblegame;
 
 import java.awt.Point;
+import java.util.Arrays;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -187,6 +188,53 @@ public class LogicTest {
         a[4][7] = -1;
         
         logic.shiftTopToBottom();
+        
+        boolean expResult = true;
+        boolean result = true;
+        
+        for (int i = 0; i < logic.getCountRow(); i++)
+            for (int j = 0; j < logic.getCountColumn(); j++)
+                if (logic.getFieldCell(i, j) != a[i][j])
+                    result = false;
+        
+        assertEquals(expResult, result);
+    }
+    
+    /**
+     * Test of shiftRightToLeft method, of class Logic.
+     */
+    @Test
+    public void testShiftRightToLeft() {
+        System.out.println("shiftRightToLeft");
+        
+        for (int i = 0; i < logic.getCountRow(); i++)
+            for (int j = 0; j < logic.getCountColumn(); j++)
+                logic.setFieldCell(i, j, -1);
+        
+        for (int i = 0; i <= 14; i++)
+            for (int j = 0; j <= 2; j++)
+                logic.setFieldCell(i, j, 0);
+        for (int i = 6; i <= 14; i++)
+            for (int j = 5; j <= 6; j++)
+                logic.setFieldCell(i, j, 0);
+        for (int i = 3; i <= 14; i++)
+            logic.setFieldCell(i, 9, 0);
+        logic.outField();
+        
+        int[][] a = new int[15][10];
+        for (int i = 0; i < 15; i++)
+            Arrays.fill(a[i], -1);
+        
+        for (int i = 0; i <= 14; i++)
+            for (int j = 0; j <= 2; j++)
+                a[i][j] = 0;
+        for (int i = 6; i <= 14; i++)
+            for (int j = 3; j <= 4; j++)
+                a[i][j] = 0;
+        for (int i = 3; i <= 14; i++)
+            a[i][5] = 0;
+        
+        logic.shiftRightToLeft();
         
         boolean expResult = true;
         boolean result = true;
