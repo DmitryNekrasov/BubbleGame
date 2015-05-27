@@ -35,7 +35,7 @@ public class Logic {
     }
     
     public int getCountRow() {
-        return 1;
+        return countRow;
     }
     
     public int getCountColumn() {
