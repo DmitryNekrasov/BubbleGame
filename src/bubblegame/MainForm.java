@@ -14,6 +14,7 @@ import java.awt.Graphics;
 public class MainForm extends javax.swing.JFrame {
 
     Logic logic;
+    final int bubbleSize = 30;
     
     public MainForm() {
         initComponents();
@@ -25,8 +26,15 @@ public class MainForm extends javax.swing.JFrame {
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        Graphics g1 = fieldPanel.getGraphics();
-    } 
+        drawField();
+    }
+    
+    public void drawField() {
+        Graphics g = fieldPanel.getGraphics();
+        for (int i = 0; i < logic.getCountRow(); i++)
+            for (int j = 0; j < logic.getCountColumn(); j++)
+                g.fillOval(j * bubbleSize, i * bubbleSize, bubbleSize, bubbleSize);
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
