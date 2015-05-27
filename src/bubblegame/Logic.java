@@ -74,11 +74,14 @@ public class Logic {
     }
     
     public void processing(Point screenPoint, int bubbleSize) {
-        
+        Point fieldPoint = screenPointToField(screenPoint, bubbleSize);
+        int j = fieldPoint.x;
+        int i = fieldPoint.y;
+        dfs(i, j, field[i][j]);
     }
     
     public void dfs(int x, int y, int colorCode) {
-        if (field[x][y] != colorCode)
+        if (field[x][y] != colorCode || field[x][y] == -1)
             return;
         field[x][y] = -1;
         if (x > 0)
