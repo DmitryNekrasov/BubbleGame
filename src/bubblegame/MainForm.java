@@ -34,8 +34,10 @@ public class MainForm extends javax.swing.JFrame {
         Graphics g = fieldPanel.getGraphics();
         for (int i = 0; i < logic.getCountRow(); i++)
             for (int j = 0; j < logic.getCountColumn(); j++) {
-                g.setColor(getColor(logic.getFieldCell(i, j)));
-                g.fillOval(j * bubbleSize, i * bubbleSize, bubbleSize, bubbleSize);
+                if (logic.getFieldCell(i, j) != -1) {
+                    g.setColor(getColor(logic.getFieldCell(i, j)));
+                    g.fillOval(j * bubbleSize, i * bubbleSize, bubbleSize, bubbleSize);
+                }
             }
     }
     
