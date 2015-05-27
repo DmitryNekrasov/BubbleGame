@@ -17,6 +17,7 @@ public class MainForm extends javax.swing.JFrame {
         initComponents();
         logic = Logic.getInstance();
         logic.initField();
+        logic.outField();
     }
 
     /**

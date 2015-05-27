@@ -52,6 +52,14 @@ public class Logic {
                 field[i][j] = generateRandom(countBubble);
     }
     
+    public void outField() {
+        for (int i = 0; i < countRow; i++) {
+            for (int j = 0; j < countColumn; j++)
+                System.out.print(field[i][j] + " ");
+            System.out.println();
+        }
+    }
+    
     public int generateRandom(int n) {
         return Math.abs(random.nextInt()) % n;
     }
