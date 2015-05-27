@@ -102,8 +102,14 @@ public class LogicTest {
     public void testInitField() {
         System.out.println("initField");
         Logic logic = Logic.getInstance();
+        logic.initField();
         boolean expResult = true;
         boolean result = true;
+        boolean[] f = new boolean[3];
+        for (int i = 0; i < logic.getCountRow(); i++)
+            for (int j = 0; j < logic.getCountColumn(); j++)
+                f[logic.getFieldCell(i, j)] = true;
+        result = result && f[0] && f[1] && f[2];
         assertEquals(expResult, result);
     }
     
