@@ -16,7 +16,7 @@ public class Logic {
     private static Logic instance;
     
     final private int countBubble = 3;
-    final private int redBubble = 0, greenBubble = 1, blueBubble = 2;
+    final public static int redBubble = 0, greenBubble = 1, blueBubble = 2;
     final private int countRow = 15, countColumn = 10;
     
     private Random random;
