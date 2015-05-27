@@ -34,6 +34,10 @@ public class Logic {
         return instance;
     }
     
+    public void initField() {
+        
+    }
+    
     public int generateRandom(int n) {
         return Math.abs(random.nextInt()) % n;
     }
