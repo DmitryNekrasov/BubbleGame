@@ -59,4 +59,16 @@ public class LogicTest {
         assertEquals(expResult, result);
     }
     
+    /**
+     * Test of getCountRow method, of class Logic.
+     */
+    @Test
+    public void testGetCountRow() {
+        System.out.println("getCountRow");
+        Logic logic = Logic.getInstance();
+        int expResult = 1;
+        int result = logic.getCountRow();
+        assertEquals(expResult, result);
+    }
+    
 }
