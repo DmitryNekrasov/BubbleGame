@@ -7,6 +7,7 @@ package bubblegame;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Point;
 
 /**
  *
@@ -21,7 +22,6 @@ public class MainForm extends javax.swing.JFrame {
         initComponents();
         logic = Logic.getInstance();
         logic.initField();
-        logic.outField();
     }
 
     @Override
@@ -64,6 +64,11 @@ public class MainForm extends javax.swing.JFrame {
 
         fieldPanel.setBackground(new java.awt.Color(255, 255, 204));
         fieldPanel.setPreferredSize(new java.awt.Dimension(300, 450));
+        fieldPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                fieldPanelMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout fieldPanelLayout = new javax.swing.GroupLayout(fieldPanel);
         fieldPanel.setLayout(fieldPanelLayout);
@@ -89,6 +94,13 @@ public class MainForm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void fieldPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fieldPanelMouseClicked
+        Point point = fieldPanel.getMousePosition();
+        int x = point.x;
+        int y = fieldPanel.getHeight() - point.y;
+        System.out.println(x + " " + y);
+    }//GEN-LAST:event_fieldPanelMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

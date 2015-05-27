@@ -44,6 +44,9 @@
           <Dimension value="[300, 450]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="fieldPanelMouseClicked"/>
+      </Events>
 
       <Layout>
         <DimensionLayout dim="0">
