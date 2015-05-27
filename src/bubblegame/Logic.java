@@ -79,6 +79,7 @@ public class Logic {
         int i = fieldPoint.y;
         dfs(i, j, field[i][j]);
         shiftTopToBottom();
+        shiftRightToLeft();
     }
     
     public void dfs(int x, int y, int colorCode) {
@@ -113,6 +114,20 @@ public class Logic {
     }
     
     public void shiftRightToLeft() {
-        
+        int ptr = -1;
+        for (int j = 0; j < countColumn; j++) {
+            if (field[countRow - 1][j] == -1 && ptr == -1) {
+                ptr = j;
+                continue;
+            }
+            if (field[countRow - 1][j] != -1 && ptr != -1) {
+                for (int i = 0; i < countRow; i++) {
+                    field[i][ptr] = field[i][j];
+                    field[i][j] = -1;
+                }
+                ptr++;
+            }
+            
+        }
     }
 }
