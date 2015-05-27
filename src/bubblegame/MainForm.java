@@ -8,6 +8,7 @@ package bubblegame;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -105,6 +106,11 @@ public class MainForm extends javax.swing.JFrame {
         Point point = fieldPanel.getMousePosition();
         logic.processing(point, bubbleSize);
         drawField();
+        if (logic.checkEndGame()) {
+            JOptionPane.showMessageDialog(fieldPanel, "qqq", "Конец игры", JOptionPane.WARNING_MESSAGE);
+            dispose();
+        }
+        
     }//GEN-LAST:event_fieldPanelMouseClicked
 
 
