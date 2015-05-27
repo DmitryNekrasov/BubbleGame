@@ -23,8 +23,8 @@ public class Logic {
     private int[][] field;
     
     private Logic() {
-        field = new int[countRow][countColumn];
         random = new Random();
+        field = new int[countRow][countColumn];
     }
     
     public static Logic getInstance() {
@@ -47,7 +47,9 @@ public class Logic {
     }
     
     public void initField() {
-        
+        for (int i = 0; i < countRow; i++)
+            for (int j = 0; j < countColumn; j++)
+                field[i][j] = generateRandom(countBubble);
     }
     
     public int generateRandom(int n) {
