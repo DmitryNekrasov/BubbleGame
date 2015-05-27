@@ -130,4 +130,8 @@ public class Logic {
             
         }
     }
+    
+    public boolean validation() {
+        return true;
+    }
 }
