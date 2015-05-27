@@ -5,6 +5,7 @@
  */
 package bubblegame;
 
+import java.awt.Point;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -101,7 +102,6 @@ public class LogicTest {
     @Test 
     public void testInitField() {
         System.out.println("initField");
-        Logic logic = Logic.getInstance();
         logic.initField();
         boolean expResult = true;
         boolean result = true;
@@ -110,6 +110,18 @@ public class LogicTest {
             for (int j = 0; j < logic.getCountColumn(); j++)
                 f[logic.getFieldCell(i, j)] = true;
         result = result && f[0] && f[1] && f[2];
+        assertEquals(expResult, result);
+    }
+    
+    /**
+     * Test of screenPointToField method, of class Logic.
+     */
+    @Test
+    public void testScreenPointToField() {
+        System.out.println("screenPointToField");
+        Point point = new Point(10, 10);
+        Point expResult = new Point(0, 0);
+        Point result = logic.screenPointToField(point, 30);
         assertEquals(expResult, result);
     }
     
