@@ -66,7 +66,7 @@ public class LogicTest {
     public void testGetCountRow() {
         System.out.println("getCountRow");
         Logic logic = Logic.getInstance();
-        int expResult = 1;
+        int expResult = 15;
         int result = logic.getCountRow();
         assertEquals(expResult, result);
     }
