@@ -83,4 +83,17 @@ public class LogicTest {
         assertEquals(expResult, result);
     }
     
+    /**
+     * Test of getFieldCell method, of class Logic.
+     */
+    @Test
+    public void testGetFieldCell() {
+        System.out.println("getFieldCell");
+        Logic logic = Logic.getInstance();
+        int i = 0, j = 0;
+        int expResult = 0;
+        int result = logic.getFieldCell(i, j);
+        assertEquals(expResult, result);
+    }
+    
 }

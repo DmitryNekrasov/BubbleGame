@@ -43,7 +43,7 @@ public class Logic {
     }
     
     public int getFieldCell(int i, int j) {
-        return 1;
+        return field[i][j];
     }
     
     public void initField() {
