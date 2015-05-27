@@ -119,8 +119,8 @@ public class LogicTest {
     @Test
     public void testScreenPointToField() {
         System.out.println("screenPointToField");
-        Point point = new Point(10, 10);
-        Point expResult = new Point(0, 0);
+        Point point = new Point(138, 376);
+        Point expResult = new Point(4, 12);
         Point result = logic.screenPointToField(point, 30);
         assertEquals(expResult, result);
     }

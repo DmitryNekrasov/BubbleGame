@@ -98,7 +98,7 @@ public class MainForm extends javax.swing.JFrame {
     private void fieldPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fieldPanelMouseClicked
         Point point = fieldPanel.getMousePosition();
         int x = point.x;
-        int y = fieldPanel.getHeight() - point.y;
+        int y = point.y;
         System.out.println(x + " " + y);
     }//GEN-LAST:event_fieldPanelMouseClicked
 
