@@ -24,4 +24,6 @@ public class Logic {
         return instance;
     }
     
+    final private int redBubble = 1, greenBubble = 2, blueBubble = 3;
+    
 }
