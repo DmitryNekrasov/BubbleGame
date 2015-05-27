@@ -40,14 +40,24 @@ public class LogicTest {
     /**
      * Test of getInstance method, of class Logic.
      */
+//    @Test
+//    public void testGetInstance() {
+//        System.out.println("getInstance");
+//        Logic expResult = null;
+//        Logic result = Logic.getInstance();
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+////        fail("The test case is a prototype.");
+//    }
+    
     @Test
-    public void testGetInstance() {
-        System.out.println("getInstance");
-        Logic expResult = null;
-        Logic result = Logic.getInstance();
+    public void testGenerateRandom() {
+        System.out.println("generateRandom");
+        Logic logic = Logic.getInstance();
+        int n = 3;
+        int expResult = 5;
+        int result = logic.generateRandom(n);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
     }
     
 }
