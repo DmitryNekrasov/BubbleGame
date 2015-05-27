@@ -93,4 +93,8 @@ public class Logic {
         if (y < countColumn - 1)
             dfs(x, y + 1, colorCode);
     }
+    
+    public void shiftTopToBottom() {
+        
+    }
 }
