@@ -158,4 +158,44 @@ public class LogicTest {
         
         assertEquals(expResult, result);
     }
+    
+    /**
+     * Test of shiftTopToBottom method, of class Logic.
+     */
+    @Test
+    public void testShiftTopToBottom() {
+        System.out.println("shiftTopToBottom");
+        
+        for (int i = 0; i < logic.getCountRow(); i++)
+            for (int j = 0; j < logic.getCountColumn(); j++)
+                logic.setFieldCell(i, j, 0);
+        
+        for (int i = 3; i <= 5; i++)
+            for (int j = 5; j <= 7; j++)
+                logic.setFieldCell(i, j, -1);
+        logic.setFieldCell(2, 6, -1);
+        logic.setFieldCell(2, 7, -1);
+        logic.setFieldCell(1, 7, -1);
+        logic.outField();
+        
+        int[][] a = new int[15][10];
+        for (int i = 0; i <= 2; i++)
+            for (int j = 5; j <= 7; j++)
+                a[i][j] = -1;
+        a[3][6] = -1;
+        a[3][7] = -1;
+        a[4][7] = -1;
+        
+        logic.shiftTopToBottom();
+        
+        boolean expResult = true;
+        boolean result = true;
+        
+        for (int i = 0; i < logic.getCountRow(); i++)
+            for (int j = 0; j < logic.getCountColumn(); j++)
+                if (logic.getFieldCell(i, j) != a[i][j])
+                    result = false;
+        
+        assertEquals(expResult, result);
+    }
 }
