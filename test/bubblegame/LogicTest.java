@@ -263,10 +263,10 @@ public class LogicTest {
             for (int j = 0; j < logic.getCountColumn(); j++)
                 logic.setFieldCell(i, j, -1);
         logic.setFieldCell(14, 0, 0);
-        logic.setFieldCell(14, 0, 1);
+        logic.setFieldCell(14, 1, 0);
         
         boolean expResult = true;
-        boolean result = logic.validation();
+        boolean result = logic.validation(14, 0);
         
         assertEquals(expResult, result);
     }
