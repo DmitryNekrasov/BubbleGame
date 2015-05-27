@@ -270,4 +270,23 @@ public class LogicTest {
         
         assertEquals(expResult, result);
     }
+    
+    /**
+     * Test of checkEndGame method, of class Logic.
+     */
+    @Test
+    public void testCheckEndGame() {
+        System.out.println("checkEndGame");
+        
+        for (int i = 0; i < logic.getCountRow(); i++)
+            for (int j = 0; j < logic.getCountColumn(); j++)
+                logic.setFieldCell(i, j, -1);
+        logic.setFieldCell(14, 0, 0);
+        logic.setFieldCell(14, 1, 1);
+        
+        boolean expResult = true;
+        boolean result = logic.checkEndGame();
+        
+        assertEquals(expResult, result);
+    }
 }
