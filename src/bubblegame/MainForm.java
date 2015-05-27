@@ -17,6 +17,7 @@ public class MainForm extends javax.swing.JFrame {
 
     Logic logic;
     final int bubbleSize = 30;
+    final Color backgrountColor = new Color(255, 255, 204);
     
     public MainForm() {
         initComponents();
@@ -37,6 +38,9 @@ public class MainForm extends javax.swing.JFrame {
                 if (logic.getFieldCell(i, j) != -1) {
                     g.setColor(getColor(logic.getFieldCell(i, j)));
                     g.fillOval(j * bubbleSize, i * bubbleSize, bubbleSize, bubbleSize);
+                } else {
+                    g.setColor(backgrountColor);
+                    g.fillRect(j * bubbleSize, i * bubbleSize, bubbleSize, bubbleSize);
                 }
             }
     }
@@ -99,9 +103,7 @@ public class MainForm extends javax.swing.JFrame {
 
     private void fieldPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fieldPanelMouseClicked
         Point point = fieldPanel.getMousePosition();
-        int x = point.x;
-        int y = point.y;
-        System.out.println(x + " " + y);
+        logic.processing(point, bubbleSize);
         drawField();
     }//GEN-LAST:event_fieldPanelMouseClicked
 
