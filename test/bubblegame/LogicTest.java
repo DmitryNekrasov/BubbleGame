@@ -55,8 +55,9 @@ public class LogicTest {
         System.out.println("generateRandom");
         Logic logic = Logic.getInstance();
         int n = 3;
-        int expResult = 5;
-        int result = logic.generateRandom(n);
+        boolean expResult = true;
+        int rand = logic.generateRandom(n);
+        boolean result = rand >= 0 && rand <= 3;
         assertEquals(expResult, result);
     }
     
