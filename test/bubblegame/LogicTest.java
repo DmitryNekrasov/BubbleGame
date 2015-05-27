@@ -142,8 +142,8 @@ public class LogicTest {
         logic.outField();
         
         int[][] a = new int[15][10];
-        for (int i = 0; i <= 5; i++)
-            for (int j = 0; j <= 3; j++)
+        for (int i = 1; i <= 5; i++)
+            for (int j = 1; j <= 3; j++)
                 a[i][j] = -1;
         
         logic.dfs(3, 3, 1);

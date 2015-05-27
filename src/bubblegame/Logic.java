@@ -78,6 +78,16 @@ public class Logic {
     }
     
     public void dfs(int x, int y, int colorCode) {
-        
+        if (field[x][y] != colorCode)
+            return;
+        field[x][y] = -1;
+        if (x > 0)
+            dfs(x - 1, y, colorCode);
+        if (x < countRow - 1)
+            dfs(x + 1, y, colorCode);
+        if (y > 0)
+            dfs(x, y - 1, colorCode);
+        if (y < countColumn - 1)
+            dfs(x, y + 1, colorCode);
     }
 }
