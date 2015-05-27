@@ -47,6 +47,10 @@ public class Logic {
         return field[i][j];
     }
     
+    public void setFieldCell(int i, int j, int val) {
+        field[i][j] = val;
+    }
+    
     public void initField() {
         for (int i = 0; i < countRow; i++)
             for (int j = 0; j < countColumn; j++)
