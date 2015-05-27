@@ -152,6 +152,11 @@ public class Logic {
     }
     
     public boolean checkEndGame() {
+        for (int i = 0; i < countRow; i++)
+            for (int j = 0; j < countColumn; j++)
+                if (field[i][j] != -1)
+                    if (validation(i, j))
+                        return false;
         return true;
     }
 }
