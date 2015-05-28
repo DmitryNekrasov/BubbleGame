@@ -27,7 +27,6 @@ public class Logic {
     private Logic() {
         random = new Random();
         field = new int[countRow][countColumn];
-        score = 0;
     }
     
     public static Logic getInstance() {
@@ -61,6 +60,7 @@ public class Logic {
         for (int i = 0; i < countRow; i++)
             for (int j = 0; j < countColumn; j++)
                 field[i][j] = generateRandom(countBubble);
+        score = 0;
     }
     
     public void outField() {
